@@ -3,335 +3,179 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Omotosho Japheth — Portfolio</title>
+<title>Japheth Oluwagbemiro — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0D1B2A;--teal:#0F7B82;--gold:#C8962E;--cream:#F8F5F0;--white:#FFFFFF;--grey:#607080;--light:#EBF5F6;--dark:#1A2535}
+html{scroll-behavior:smooth}
+body{font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--dark);line-height:1.6}
 
-  :root {
-    --navy:  #0D1B2A;
-    --teal:  #0F7B82;
-    --gold:  #C8962E;
-    --cream: #F8F5F0;
-    --white: #FFFFFF;
-    --grey:  #607080;
-    --light: #EBF5F6;
-    --dark:  #1A2535;
-  }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,245,240,0.96);backdrop-filter:blur(10px);border-bottom:1px solid rgba(15,123,130,0.15);display:flex;align-items:center;justify-content:space-between;padding:0 6vw;height:64px}
+.nav-logo{font-family:"DM Serif Display",serif;font-size:1.15rem;color:var(--navy);text-decoration:none;font-weight:bold}
+.nav-links{display:flex;gap:1.6rem;list-style:none}
+.nav-links a{font-size:0.82rem;font-weight:500;letter-spacing:0.06em;color:var(--grey);text-decoration:none;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--teal)}
 
-  html { scroll-behavior: smooth; }
+/* HERO */
+.hero{min-height:100vh;background:var(--navy);display:flex;align-items:center;padding:100px 6vw 60px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 80% 50%,rgba(15,123,130,0.18) 0%,transparent 60%),radial-gradient(ellipse at 20% 80%,rgba(200,150,46,0.10) 0%,transparent 50%)}
+.hero-gold-bar{position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--gold)}
+.hero-content{position:relative;z-index:1;max-width:700px}
+.hero-tag{display:inline-block;background:rgba(15,123,130,0.25);border:1px solid rgba(15,123,130,0.5);color:#7FC8CC;font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;padding:6px 16px;border-radius:100px;margin-bottom:1.5rem}
+.hero h1{font-family:"DM Serif Display",serif;font-size:clamp(2.4rem,5vw,3.8rem);color:var(--white);line-height:1.15;margin-bottom:1rem}
+.hero h1 span{color:var(--gold)}
+.hero-sub{font-size:1.05rem;color:rgba(255,255,255,0.65);max-width:560px;margin-bottom:2rem}
+.hero-roles{display:flex;flex-wrap:wrap;gap:0.6rem;margin-bottom:2.5rem}
+.role-pill{background:var(--teal);color:var(--white);font-size:0.78rem;font-weight:600;padding:6px 16px;border-radius:100px;letter-spacing:0.04em}
+.hero-actions{display:flex;flex-wrap:wrap;gap:1rem}
+.btn-primary{background:var(--gold);color:var(--navy);font-weight:700;font-size:0.9rem;padding:14px 28px;border-radius:8px;text-decoration:none;display:inline-block;transition:all 0.2s}
+.btn-primary:hover{background:#e0a832;transform:translateY(-2px)}
+.btn-outline{background:transparent;color:var(--white);font-weight:600;font-size:0.9rem;padding:14px 28px;border-radius:8px;text-decoration:none;border:1.5px solid rgba(255,255,255,0.35);transition:all 0.2s;display:inline-block}
+.btn-outline:hover{border-color:var(--teal);color:#7FC8CC}
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--dark);
-    line-height: 1.6;
-  }
+/* SECTIONS */
+section{padding:90px 6vw}
+.section-label{font-size:0.75rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--teal);margin-bottom:0.5rem}
+.section-title{font-family:"DM Serif Display",serif;font-size:clamp(1.8rem,3vw,2.6rem);color:var(--navy);margin-bottom:1rem}
+.section-line{width:48px;height:3px;background:var(--gold);border-radius:2px;margin-bottom:2.5rem}
 
-  /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: rgba(248,245,240,0.95);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(15,123,130,0.15);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0 6vw; height: 64px;
-  }
-  .nav-logo {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.15rem; color: var(--navy); text-decoration: none;
-  }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.85rem; font-weight: 500; letter-spacing: 0.06em;
-    color: var(--grey); text-decoration: none; text-transform: uppercase;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--teal); }
+/* ABOUT */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;max-width:1100px}
+.about-text p{font-size:1rem;color:var(--grey);line-height:1.8;margin-bottom:1rem}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
+.stat-card{background:var(--light);border-radius:12px;padding:1.2rem 1.4rem;border-left:3px solid var(--teal)}
+.stat-num{font-family:"DM Serif Display",serif;font-size:1.9rem;color:var(--navy);line-height:1}
+.stat-label{font-size:0.82rem;color:var(--grey);margin-top:4px}
 
-  /* ── HERO ── */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: flex; align-items: center;
-    padding: 100px 6vw 60px;
-    position: relative; overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-    background: radial-gradient(ellipse at 80% 50%, rgba(15,123,130,0.18) 0%, transparent 60%),
-                radial-gradient(ellipse at 20% 80%, rgba(200,150,46,0.10) 0%, transparent 50%);
-  }
-  .hero-gold-bar {
-    position: absolute; left: 0; top: 0; bottom: 0;
-    width: 6px; background: var(--gold);
-  }
-  .hero-content { position: relative; z-index: 1; max-width: 700px; }
-  .hero-tag {
-    display: inline-block;
-    background: rgba(15,123,130,0.25);
-    border: 1px solid rgba(15,123,130,0.5);
-    color: #7FC8CC; font-size: 0.78rem; font-weight: 500;
-    letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 6px 16px; border-radius: 100px;
-    margin-bottom: 1.5rem;
-    animation: fadeUp 0.6s ease both;
-  }
-  .hero h1 {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    color: var(--white); line-height: 1.15;
-    margin-bottom: 1rem;
-    animation: fadeUp 0.6s 0.1s ease both;
-  }
-  .hero h1 span { color: var(--gold); }
-  .hero-sub {
-    font-size: 1.05rem; color: rgba(255,255,255,0.65);
-    max-width: 560px; margin-bottom: 2rem;
-    animation: fadeUp 0.6s 0.2s ease both;
-  }
-  .hero-roles {
-    display: flex; flex-wrap: wrap; gap: 0.6rem;
-    margin-bottom: 2.5rem;
-    animation: fadeUp 0.6s 0.3s ease both;
-  }
-  .role-pill {
-    background: var(--teal); color: var(--white);
-    font-size: 0.78rem; font-weight: 600;
-    padding: 6px 16px; border-radius: 100px;
-    letter-spacing: 0.04em;
-  }
-  .hero-actions {
-    display: flex; flex-wrap: wrap; gap: 1rem;
-    animation: fadeUp 0.6s 0.4s ease both;
-  }
-  .btn-primary {
-    background: var(--gold); color: var(--navy);
-    font-weight: 600; font-size: 0.9rem;
-    padding: 14px 28px; border-radius: 8px;
-    text-decoration: none; border: none; cursor: pointer;
-    transition: all 0.2s; display: inline-block;
-  }
-  .btn-primary:hover { background: #e0a832; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(200,150,46,0.35); }
-  .btn-outline {
-    background: transparent; color: var(--white);
-    font-weight: 600; font-size: 0.9rem;
-    padding: 14px 28px; border-radius: 8px;
-    text-decoration: none; border: 1.5px solid rgba(255,255,255,0.35);
-    transition: all 0.2s; display: inline-block;
-  }
-  .btn-outline:hover { border-color: var(--teal); color: #7FC8CC; }
+/* SKILLS */
+.skills{background:var(--cream)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(195px,1fr));gap:1rem;max-width:1100px}
+.skill-card{background:var(--white);border:1px solid rgba(15,123,130,0.15);border-radius:10px;padding:1rem 1.2rem;font-size:0.88rem;font-weight:500;color:var(--dark);display:flex;align-items:center;gap:0.6rem;cursor:pointer;transition:all 0.2s;position:relative}
+.skill-card:hover{border-color:var(--teal);background:var(--light);transform:translateY(-2px);box-shadow:0 4px 16px rgba(15,123,130,0.12)}
+.skill-dot{width:8px;height:8px;border-radius:50%;background:var(--teal);flex-shrink:0}
+.skill-hint{font-size:0.65rem;color:var(--teal);margin-left:auto;opacity:0.7}
 
-  /* ── SECTIONS ── */
-  section { padding: 90px 6vw; }
-  .section-label {
-    font-size: 0.75rem; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--teal);
-    margin-bottom: 0.5rem;
-  }
-  .section-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.8rem, 3vw, 2.6rem);
-    color: var(--navy); margin-bottom: 1rem;
-  }
-  .section-line {
-    width: 48px; height: 3px;
-    background: var(--gold); border-radius: 2px;
-    margin-bottom: 2.5rem;
-  }
+/* SKILL POPUP */
+.skill-popup-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,42,0.6);z-index:999;align-items:center;justify-content:center;padding:1rem}
+.skill-popup-overlay.active{display:flex}
+.skill-popup{background:var(--white);border-radius:16px;padding:2rem;max-width:420px;width:100%;position:relative;box-shadow:0 24px 64px rgba(13,27,42,0.2);animation:popIn 0.2s ease}
+.skill-popup-close{position:absolute;top:1rem;right:1rem;background:var(--light);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;color:var(--grey);display:flex;align-items:center;justify-content:center}
+.skill-popup-icon{font-size:2.4rem;margin-bottom:0.8rem}
+.skill-popup-title{font-family:"DM Serif Display",serif;font-size:1.3rem;color:var(--navy);margin-bottom:0.5rem}
+.skill-popup-body{font-size:0.92rem;color:var(--grey);line-height:1.75}
+.skill-popup-tag{display:inline-block;background:var(--light);color:var(--teal);font-size:0.72rem;font-weight:600;padding:3px 10px;border-radius:100px;margin-top:1rem}
+@keyframes popIn{from{opacity:0;transform:scale(0.92)}to{opacity:1;transform:scale(1)}}
 
-  /* ── ABOUT ── */
-  .about { background: var(--white); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: start;
-    max-width: 1100px;
-  }
-  .about-text p {
-    font-size: 1rem; color: var(--grey);
-    line-height: 1.8; margin-bottom: 1rem;
-  }
-  .about-stats {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 1.5rem; margin-top: 2rem;
-  }
-  .stat-card {
-    background: var(--light);
-    border-radius: 12px; padding: 1.2rem 1.4rem;
-    border-left: 3px solid var(--teal);
-  }
-  .stat-num {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.9rem; color: var(--navy); line-height: 1;
-  }
-  .stat-label { font-size: 0.82rem; color: var(--grey); margin-top: 4px; }
+/* PROJECTS */
+.projects{background:var(--white)}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.8rem;max-width:1100px}
+.project-card{background:var(--cream);border:1px solid rgba(15,123,130,0.12);border-radius:16px;padding:1.8rem;transition:all 0.25s;position:relative;overflow:hidden}
+.project-card::before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--teal),var(--gold))}
+.project-card:hover{transform:translateY(-4px);box-shadow:0 16px 48px rgba(13,27,42,0.1)}
+.project-tag{display:inline-block;background:var(--light);color:var(--teal);font-size:0.72rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:1rem}
+.project-title{font-family:"DM Serif Display",serif;font-size:1.2rem;color:var(--navy);margin-bottom:0.6rem}
+.project-desc{font-size:0.88rem;color:var(--grey);line-height:1.7;margin-bottom:1.4rem}
+.project-actions{display:flex;gap:0.8rem;flex-wrap:wrap}
+.btn-sm{font-size:0.8rem;font-weight:600;padding:8px 18px;border-radius:6px;text-decoration:none;transition:all 0.2s;display:inline-block;cursor:pointer}
+.btn-sm-primary{background:var(--teal);color:var(--white)}
+.btn-sm-primary:hover{background:#0a6268}
+.btn-sm-outline{border:1.5px solid var(--teal);color:var(--teal);background:transparent}
+.btn-sm-outline:hover{background:var(--teal);color:var(--white)}
+.coming{opacity:0.45;pointer-events:none;border-style:dashed}
 
-  /* ── SKILLS ── */
-  .skills { background: var(--cream); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem; max-width: 1100px;
-  }
-  .skill-card {
-    background: var(--white);
-    border: 1px solid rgba(15,123,130,0.15);
-    border-radius: 10px; padding: 1rem 1.2rem;
-    font-size: 0.88rem; font-weight: 500; color: var(--dark);
-    display: flex; align-items: center; gap: 0.6rem;
-    transition: all 0.2s;
-  }
-  .skill-card:hover { border-color: var(--teal); background: var(--light); transform: translateY(-2px); }
-  .skill-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
+/* CERTIFICATES */
+.certificates{background:var(--cream)}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.4rem;max-width:1100px}
+.cert-card{background:var(--white);border:1px solid rgba(15,123,130,0.15);border-radius:14px;padding:1.4rem 1.6rem;display:flex;align-items:center;gap:1.2rem;transition:all 0.25s;position:relative;overflow:hidden;cursor:pointer}
+.cert-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--teal),var(--gold))}
+.cert-card:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(13,27,42,0.08);border-color:var(--teal)}
+.cert-icon{font-size:2rem;flex-shrink:0;width:52px;text-align:center}
+.cert-info{flex:1}
+.cert-title{font-weight:600;font-size:0.95rem;color:var(--navy);margin-bottom:3px}
+.cert-org{font-size:0.82rem;color:var(--teal);margin-bottom:3px}
+.cert-year{font-size:0.78rem;color:var(--grey)}
+.cert-badge{background:rgba(15,123,130,0.12);color:var(--teal);font-size:0.72rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:4px 10px;border-radius:100px;flex-shrink:0}
+.cert-view-hint{font-size:0.7rem;color:var(--teal);margin-top:4px;opacity:0.8}
+.cert-add{border-style:dashed;opacity:0.55;cursor:default}
+.cert-add:hover{transform:none;box-shadow:none}
 
-  /* ── PROJECTS ── */
-  .projects { background: var(--white); }
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.8rem; max-width: 1100px;
-  }
-  .project-card {
-    background: var(--cream);
-    border: 1px solid rgba(15,123,130,0.12);
-    border-radius: 16px; padding: 1.8rem;
-    transition: all 0.25s; position: relative; overflow: hidden;
-  }
-  .project-card::before {
-    content: ''; position: absolute;
-    top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, var(--teal), var(--gold));
-  }
-  .project-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(13,27,42,0.1); }
-  .project-tag {
-    display: inline-block;
-    background: var(--light); color: var(--teal);
-    font-size: 0.72rem; font-weight: 600;
-    letter-spacing: 0.08em; text-transform: uppercase;
-    padding: 4px 12px; border-radius: 100px;
-    margin-bottom: 1rem;
-  }
-  .project-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 1.2rem; color: var(--navy);
-    margin-bottom: 0.6rem;
-  }
-  .project-desc { font-size: 0.88rem; color: var(--grey); line-height: 1.7; margin-bottom: 1.4rem; }
-  .project-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-  .btn-sm {
-    font-size: 0.8rem; font-weight: 600;
-    padding: 8px 18px; border-radius: 6px;
-    text-decoration: none; transition: all 0.2s;
-    display: inline-block;
-  }
-  .btn-sm-primary { background: var(--teal); color: var(--white); }
-  .btn-sm-primary:hover { background: #0a6268; }
-  .btn-sm-outline { border: 1.5px solid var(--teal); color: var(--teal); }
-  .btn-sm-outline:hover { background: var(--teal); color: var(--white); }
-  .coming-soon { opacity: 0.5; pointer-events: none; border-style: dashed; }
+/* CERT POPUP */
+.cert-popup-overlay{display:none;position:fixed;inset:0;background:rgba(13,27,42,0.7);z-index:999;align-items:center;justify-content:center;padding:1rem}
+.cert-popup-overlay.active{display:flex}
+.cert-popup{background:var(--white);border-radius:16px;padding:2rem;max-width:500px;width:100%;position:relative;box-shadow:0 24px 64px rgba(13,27,42,0.25);animation:popIn 0.2s ease;text-align:center}
+.cert-popup-close{position:absolute;top:1rem;right:1rem;background:var(--light);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;color:var(--grey)}
+.cert-popup img{width:100%;border-radius:10px;margin:1rem 0;border:1px solid var(--light)}
+.cert-popup-title{font-family:"DM Serif Display",serif;font-size:1.2rem;color:var(--navy);margin-bottom:0.3rem}
+.cert-popup-org{font-size:0.88rem;color:var(--teal)}
+.cert-popup-placeholder{background:var(--light);border-radius:10px;padding:3rem 1rem;margin:1rem 0;color:var(--grey);font-size:0.9rem}
 
-  /* ── DOWNLOADS ── */
-  .downloads { background: var(--navy); }
-  .downloads .section-title { color: var(--white); }
-  .downloads .section-label { color: var(--gold); }
-  .downloads-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 1.4rem; max-width: 1100px;
-  }
-  .download-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px; padding: 1.6rem;
-    display: flex; align-items: center;
-    gap: 1.2rem; transition: all 0.2s;
-    text-decoration: none;
-  }
-  .download-card:hover {
-    background: rgba(15,123,130,0.2);
-    border-color: var(--teal);
-    transform: translateY(-2px);
-  }
-  .download-icon {
-    width: 48px; height: 48px;
-    background: var(--teal); border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem; flex-shrink: 0;
-  }
-  .download-info { flex: 1; }
-  .download-name { font-weight: 600; color: var(--white); font-size: 0.95rem; }
-  .download-size { font-size: 0.78rem; color: rgba(255,255,255,0.45); margin-top: 2px; }
-  .download-arrow { color: var(--gold); font-size: 1.2rem; }
+/* DOWNLOADS */
+.downloads{background:var(--navy)}
+.downloads .section-title{color:var(--white)}
+.downloads .section-label{color:var(--gold)}
+.downloads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.4rem;max-width:1100px}
+.dl-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:1.6rem;display:flex;align-items:center;gap:1.2rem;transition:all 0.2s;text-decoration:none}
+.dl-card:hover{background:rgba(15,123,130,0.2);border-color:var(--teal);transform:translateY(-2px)}
+.dl-icon{width:48px;height:48px;background:var(--teal);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0}
+.dl-info{flex:1}
+.dl-name{font-weight:600;color:var(--white);font-size:0.95rem}
+.dl-size{font-size:0.78rem;color:rgba(255,255,255,0.45);margin-top:2px}
+.dl-arrow{color:var(--gold);font-size:1.4rem;font-weight:bold}
 
-  /* ── CONTACT ── */
-  .contact { background: var(--cream); }
-  .contact-grid {
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; max-width: 1000px;
-  }
-  .contact-info p { color: var(--grey); font-size: 1rem; line-height: 1.8; margin-bottom: 2rem; }
-  .contact-links { display: flex; flex-direction: column; gap: 0.8rem; }
-  .contact-link {
-    display: flex; align-items: center; gap: 0.8rem;
-    text-decoration: none; color: var(--dark);
-    font-size: 0.92rem; font-weight: 500;
-    padding: 0.8rem 1rem;
-    background: var(--white);
-    border: 1px solid rgba(15,123,130,0.15);
-    border-radius: 8px; transition: all 0.2s;
-  }
-  .contact-link:hover { border-color: var(--teal); color: var(--teal); }
-  .contact-link-icon { font-size: 1.1rem; width: 24px; text-align: center; }
-  .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-  .contact-form input,
-  .contact-form textarea {
-    padding: 12px 16px;
-    border: 1.5px solid rgba(15,123,130,0.2);
-    border-radius: 8px; font-family: 'DM Sans', sans-serif;
-    font-size: 0.9rem; background: var(--white);
-    transition: border-color 0.2s; outline: none;
-  }
-  .contact-form input:focus,
-  .contact-form textarea:focus { border-color: var(--teal); }
-  .contact-form textarea { resize: vertical; min-height: 120px; }
+/* CONTACT */
+.contact{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1000px}
+.contact-info p{color:var(--grey);font-size:1rem;line-height:1.8;margin-bottom:2rem}
+.contact-links{display:flex;flex-direction:column;gap:0.8rem}
+.contact-link{display:flex;align-items:center;gap:0.8rem;text-decoration:none;color:var(--dark);font-size:0.92rem;font-weight:500;padding:0.8rem 1rem;background:var(--cream);border:1px solid rgba(15,123,130,0.15);border-radius:8px;transition:all 0.2s}
+.contact-link:hover{border-color:var(--teal);color:var(--teal)}
+.cl-icon{font-size:1.1rem;width:24px;text-align:center}
+.cf input,.cf textarea{width:100%;padding:12px 16px;border:1.5px solid rgba(15,123,130,0.2);border-radius:8px;font-family:"DM Sans",sans-serif;font-size:0.9rem;background:var(--cream);outline:none;margin-bottom:1rem;transition:border-color 0.2s}
+.cf input:focus,.cf textarea:focus{border-color:var(--teal)}
+.cf textarea{resize:vertical;min-height:120px}
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--navy);
-    padding: 2rem 6vw;
-    text-align: center;
-    color: rgba(255,255,255,0.4);
-    font-size: 0.82rem;
-    border-top: 1px solid rgba(200,150,46,0.2);
-  }
-  footer span { color: var(--gold); }
+/* FOOTER */
+footer{background:var(--navy);padding:2rem 6vw;text-align:center;color:rgba(255,255,255,0.4);font-size:0.82rem;border-top:1px solid rgba(200,150,46,0.2)}
+footer span{color:var(--gold)}
 
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 768px) {
-    .nav-links { display: none; }
-    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
-    .about-stats { grid-template-columns: 1fr 1fr; }
-    section { padding: 60px 5vw; }
-  }
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){.nav-links{display:none}.about-grid,.contact-grid{grid-template-columns:1fr;gap:2rem}.about-stats{grid-template-columns:1fr 1fr}section{padding:60px 5vw}}
 </style>
 </head>
 <body>
 
+<!-- SKILL POPUP -->
+<div class="skill-popup-overlay" id="skillOverlay" onclick="closeSkillPopup(event)">
+  <div class="skill-popup">
+    <button class="skill-popup-close" onclick="closeSkillPopup()">&#x2715;</button>
+    <div class="skill-popup-icon" id="spIcon"></div>
+    <div class="skill-popup-title" id="spTitle"></div>
+    <div class="skill-popup-body" id="spBody"></div>
+    <div class="skill-popup-tag" id="spTag"></div>
+  </div>
+</div>
+
+<!-- CERT POPUP -->
+<div class="cert-popup-overlay" id="certOverlay" onclick="closeCertPopup(event)">
+  <div class="cert-popup">
+    <button class="cert-popup-close" onclick="closeCertPopup()">&#x2715;</button>
+    <div class="cert-popup-title" id="cpTitle"></div>
+    <div class="cert-popup-org" id="cpOrg"></div>
+    <div id="cpImage"></div>
+  </div>
+</div>
+
 <!-- NAV -->
 <nav>
-  <a class="nav-logo" href="#">OJO</a>
+  <a class="nav-logo" href="#">SB</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certificates</a></li>
     <li><a href="#downloads">Downloads</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -341,12 +185,9 @@
 <section class="hero">
   <div class="hero-gold-bar"></div>
   <div class="hero-content">
-    <div class="hero-tag">Open to Remote & Local Opportunities</div>
-    <h1>Omotosho<br><span>Japheth</span> Oluwagbemiro</h1>
-    <p class="hero-sub">
-      I help organisations run smarter through data analysis, technical project management,
-      and business leverage strategy — backed by real, proven work.
-    </p>
+    <div class="hero-tag">Open to Remote &amp; Local Opportunities</div>
+    <h1>Omotosho <span>Japheth</span> Oluwagbemiro</h1>
+    <p class="hero-sub">I help organisations run smarter through data analysis, technical project management, and business leverage strategy &#8212; backed by real, proven work.</p>
     <div class="hero-roles">
       <span class="role-pill">Technical Project Manager</span>
       <span class="role-pill">Data Analyst</span>
@@ -354,7 +195,7 @@
       <span class="role-pill">Virtual Operator</span>
     </div>
     <div class="hero-actions">
-      <a href="#downloads" class="btn-primary">Download My CV</a>
+      <a href="Japheth_CV_Final.pdf" download class="btn-primary">&#8595; Download My CV</a>
       <a href="#projects" class="btn-outline">View My Work</a>
     </div>
   </div>
@@ -367,40 +208,16 @@
   <div class="section-line"></div>
   <div class="about-grid">
     <div class="about-text">
-      <p>
-        I am a results-driven professional with hands-on expertise in technical project management,
-        data analysis, and business leverage strategy. I bring a practical, no-nonsense approach
-        to solving complex operational problems using data, automation, and smart process design.
-      </p>
-      <p>
-        My background spans operations management, academic instruction, community training,
-        and freelance consulting — giving me a well-rounded view of how businesses at every
-        level operate and where the real opportunities for improvement lie.
-      </p>
-      <p>
-        I hold a B.Sc. in Computer Science from Kwara State University (Direct Entry, Completed 2025)
-        and certifications from ALX in AI Career Essentials and Virtual Assistance. I am actively
-        exploring multi-agent workflows, generative AI operations, and automated business frameworks.
-      </p>
+      <p>I am a results-driven trusted with hands-on expertise in technical project management, data analysis, and business leverage strategy. I bring a practical approach to solving operational problems using data, automation, AI, and smart process design.</p>
+      <p>My background spans operations management, academic instruction, community training, and freelance consulting &#8212; giving me a well-rounded view of how businesses operate and where the real opportunities for improvement lie.</p>
+      <p>I hold a B.Sc. in Computer Science from Kwara State University (Direct Entry, Completed 2025) and certifications from ALX in AI Career Essentials and Virtual Assistance.</p>
     </div>
     <div>
       <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-num">80+</div>
-          <div class="stat-label">Students Mentored</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">95%</div>
-          <div class="stat-label">Lab Uptime Maintained</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">743K</div>
-          <div class="stat-label">Data Records Analyzed</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-num">3+</div>
-          <div class="stat-label">Years Operations Experience</div>
-        </div>
+        <div class="stat-card"><div class="stat-num">80+</div><div class="stat-label">Students Mentored</div></div>
+        <div class="stat-card"><div class="stat-num">95%</div><div class="stat-label">Lab Uptime Maintained</div></div>
+        <div class="stat-card"><div class="stat-num">743K</div><div class="stat-label">Data Records Analysed</div></div>
+        <div class="stat-card"><div class="stat-num">3+</div><div class="stat-label">Years Experience</div></div>
       </div>
     </div>
   </div>
@@ -411,19 +228,43 @@
   <div class="section-label">What I Do</div>
   <div class="section-title">Core Skills</div>
   <div class="section-line"></div>
+  <p style="color:var(--grey);font-size:0.88rem;margin-bottom:1.5rem;max-width:600px">&#128161; Click any skill card to learn what it means and how I use it.</p>
   <div class="skills-grid">
-    <div class="skill-card"><span class="skill-dot"></span>Technical Project Management</div>
-    <div class="skill-card"><span class="skill-dot"></span>Data Analysis & Reporting</div>
-    <div class="skill-card"><span class="skill-dot"></span>Business Leverage Strategy</div>
-    <div class="skill-card"><span class="skill-dot"></span>Virtual Operations</div>
-    <div class="skill-card"><span class="skill-dot"></span>Microsoft Excel (Advanced)</div>
-    <div class="skill-card"><span class="skill-dot"></span>AI & Automation Workflows</div>
-    <div class="skill-card"><span class="skill-dot"></span>KPI Dashboard Design</div>
-    <div class="skill-card"><span class="skill-dot"></span>Process Optimisation</div>
-    <div class="skill-card"><span class="skill-dot"></span>Stakeholder Communication</div>
-    <div class="skill-card"><span class="skill-dot"></span>Executive Documentation</div>
-    <div class="skill-card"><span class="skill-dot"></span>ARIMA Forecasting</div>
-    <div class="skill-card"><span class="skill-dot"></span>Latenode · Bolt.new · Cursor</div>
+    <div class="skill-card" onclick="openSkill('Technical Project Management','&#128203;','This means planning, organising, and leading technical projects from start to finish. I make sure tasks are completed on time, team members know what to do, and goals are met. Think of it like being the captain of a ship &#8212; keeping everything moving in the right direction.','Core Strength')">
+      <span class="skill-dot"></span>Technical Project Management<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Data Analysis &amp; Reporting','&#128202;','This means taking raw numbers and data, cleaning them up, studying them, and turning them into clear insights that help businesses make better decisions. I use tools like Excel and Python to do this. The result is always a clear report that explains what the data is saying.','Core Strength')">
+      <span class="skill-dot"></span>Data Analysis &amp; Reporting<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Business Leverage Strategy','&#128200;','This is about finding smart ways to grow a business without just spending more money or working more hours. It means using the right systems, tools, and frameworks to get bigger results from the same resources. Like using a lever to lift something heavy with less effort.','Core Strength')">
+      <span class="skill-dot"></span>Business Leverage Strategy<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Virtual Operations','&#128187;','This means managing and running business tasks and teams remotely &#8212; entirely online. This includes coordinating schedules, handling communications, managing files and data, and keeping projects running smoothly without being physically present.','Remote Ready')">
+      <span class="skill-dot"></span>Virtual Operations<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Microsoft Excel','&#128209;','Excel is a powerful spreadsheet tool used for organising data, doing calculations, creating dashboards, and building reports. I use it at an advanced level &#8212; pivot tables, formulas, charts, and automated tracking sheets that save businesses hours every week.','Technical Tool')">
+      <span class="skill-dot"></span>Microsoft Excel<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('AI &amp; Automation Workflows','&#129302;','This means using artificial intelligence tools and automation software to reduce manual, repetitive work. Instead of doing the same task 100 times, I build a system that does it automatically. This saves time, reduces errors, and lets teams focus on more important work.','Emerging Skill')">
+      <span class="skill-dot"></span>AI &amp; Automation Workflows<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('KPI Dashboard Design','&#128270;','KPI stands for Key Performance Indicators &#8212; these are the important numbers a business tracks to know if it is doing well. A KPI dashboard is a visual screen (like a report or chart) that shows all those important numbers in one place at a glance. I design these so business owners always know exactly how they are performing.','Analytical Skill')">
+      <span class="skill-dot"></span>KPI Dashboard Design<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Process Optimisation','&#9881;&#65039;','This means studying how a business currently does things and finding faster, cheaper, or better ways to do them. It could mean removing unnecessary steps, automating a task, or reorganising a team. The goal is always: same result, less effort and cost.','Operations')">
+      <span class="skill-dot"></span>Process Optimisation<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Stakeholder Communication','&#128483;','Stakeholders are the people who care about a project &#8212; clients, managers, investors, or team members. Stakeholder communication means keeping all of them informed, aligned, and happy. This includes sending clear reports, running meetings, and making sure everyone understands the plan and the progress.','Soft Skill')">
+      <span class="skill-dot"></span>Stakeholder Communication<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('Executive Documentation','&#128196;','This means writing and preparing high-quality professional documents &#8212; like reports, proposals, strategy papers, and presentations &#8212; that are meant for senior decision-makers. These documents need to be clear, accurate, well-structured, and professional enough to be taken seriously in a boardroom or business meeting.','Professional Skill')">
+      <span class="skill-dot"></span>Executive Documentation<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('ARIMA Forecasting','&#128209;','ARIMA is a statistical method used to predict future values based on past data &#8212; for example, predicting what food prices will be next year based on the last 10 years of price data. I used this model in my Global Food Price Analysis project to generate accurate 5-year price forecasts for Rice and Maize.','Data Science')">
+      <span class="skill-dot"></span>ARIMA Forecasting<span class="skill-hint">tap &#x2139;</span></div>
+
+    <div class="skill-card" onclick="openSkill('AI Tools &amp; Platforms','&#128640;','I actively work with modern AI tools including Make.com (automation), Loveable (AI app builder), GitHub (code storage and sharing), Claude AI (advanced reasoning and writing), Bolt.new (rapid prototyping), Cursor (AI-powered coding), and other emerging platforms. These tools help me build smarter, faster solutions.','Tech Stack')">
+      <span class="skill-dot"></span>Make.com · Loveable · GitHub <span class="skill-hint">tap &#x2139;</span></div>
   </div>
 </section>
 
@@ -433,43 +274,93 @@
   <div class="section-title">Portfolio Projects</div>
   <div class="section-line"></div>
   <div class="projects-grid">
-
     <div class="project-card">
       <div class="project-tag">Data Analysis</div>
       <div class="project-title">Global Food Price Analysis</div>
-      <p class="project-desc">
-        Analyzed 743,914 WFP food price records across 100+ countries using Python, Pandas,
-        and ARIMA statistical forecasting. Generated 5-year price predictions for Rice and
-        Maize with validated accuracy metrics.
-      </p>
+      <p class="project-desc">Analysed 743,914 WFP food price records across 100+ countries using Python, Pandas, and ARIMA forecasting. Generated 5-year price predictions with 5 professional charts.</p>
       <div class="project-actions">
-        <a href="Global_Food_Price_Analysis_Portfolio.pdf" download class="btn-sm btn-sm-primary">Download Report</a>
-        <a href="#" class="btn-sm btn-sm-outline">View Details</a>
+        <a href="Global_Food_Price_Analysis_Portfolio.pdf" download class="btn-sm btn-sm-primary">&#8595; Download PDF</a>
       </div>
     </div>
-
     <div class="project-card">
       <div class="project-tag">Business Strategy</div>
       <div class="project-title">Business Leverage Case Study</div>
-      <p class="project-desc">
-        A comprehensive business leverage analysis identifying operational inefficiencies,
-        automation opportunities, and scaling frameworks for small-to-medium Nigerian businesses.
-      </p>
+      <p class="project-desc">A comprehensive leverage analysis identifying operational inefficiencies, automation opportunities, and scaling frameworks for Nigerian small-to-medium businesses.</p>
       <div class="project-actions">
-        <a href="#" class="btn-sm btn-sm-primary coming-soon">Coming Soon</a>
+        <a href="Business_Leverage_Case_Study.pdf" download class="btn-sm btn-sm-primary">&#8595; Download PDF</a>
       </div>
     </div>
-
     <div class="project-card">
       <div class="project-tag">Automation</div>
       <div class="project-title">Workflow Automation Project</div>
-      <p class="project-desc">
-        Designed and implemented automated workflow systems using modern tools to reduce
-        manual task cycles and improve team throughput for operational teams.
-      </p>
+      <p class="project-desc">Designing automated workflow systems to reduce manual task cycles and improve business team throughput using Make.com and AI tools.</p>
       <div class="project-actions">
-        <a href="#" class="btn-sm btn-sm-primary coming-soon">Coming Soon</a>
+        <span class="btn-sm btn-sm-outline coming">Coming Soon</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATES -->
+<section class="certificates" id="certificates">
+  <div class="section-label">Proof of Learning</div>
+  <div class="section-title">Certificates &amp; Qualifications</div>
+  <div class="section-line"></div>
+  <p style="color:var(--grey);font-size:0.88rem;margin-bottom:1.5rem;max-width:600px">&#128161; Click any certificate to view the full certificate image.</p>
+  <div class="certs-grid">
+
+    <div class="cert-card" onclick="openCert('B.Sc. Computer Science','Kwara State University (KWASU) — 2025','bsc')">
+      <div class="cert-icon">&#127891;</div>
+      <div class="cert-info">
+        <div class="cert-title">B.Sc. Computer Science</div>
+        <div class="cert-org">Kwara State University (KWASU)</div>
+        <div class="cert-year">2025 — Direct Entry, Completed</div>
+        <div class="cert-view-hint">&#128065; Click to view certificate</div>
+      </div>
+      <div class="cert-badge">Degree</div>
+    </div>
+
+    <div class="cert-card" onclick="openCert('AI Career Essentials','ALX Africa — 2024','alx_ai')">
+      <div class="cert-icon">&#129302;</div>
+      <div class="cert-info">
+        <div class="cert-title">AI Career Essentials</div>
+        <div class="cert-org">ALX Africa</div>
+        <div class="cert-year">2024</div>
+        <div class="cert-view-hint">&#128065; Click to view certificate</div>
+      </div>
+      <div class="cert-badge">Certificate</div>
+    </div>
+
+    <div class="cert-card" onclick="openCert('Virtual Assistant','ALX Africa — 2024','alx_va')">
+      <div class="cert-icon">&#128188;</div>
+      <div class="cert-info">
+        <div class="cert-title">Virtual Assistant</div>
+        <div class="cert-org">ALX Africa</div>
+        <div class="cert-year">2024</div>
+        <div class="cert-view-hint">&#128065; Click to view certificate</div>
+      </div>
+      <div class="cert-badge">Certificate</div>
+    </div>
+
+    <div class="cert-card" onclick="openCert('National Diploma — Computer Science','Crown Polytechnic, Ado-Ekiti — 2021','nd')">
+      <div class="cert-icon">&#128187;</div>
+      <div class="cert-info">
+        <div class="cert-title">National Diploma — Computer Science</div>
+        <div class="cert-org">Crown Polytechnic, Ado-Ekiti</div>
+        <div class="cert-year">2021</div>
+        <div class="cert-view-hint">&#128065; Click to view certificate</div>
+      </div>
+      <div class="cert-badge">Diploma</div>
+    </div>
+
+    <div class="cert-card cert-add">
+      <div class="cert-icon">&#10133;</div>
+      <div class="cert-info">
+        <div class="cert-title">Add Your Next Certificate</div>
+        <div class="cert-org">Send the image to Japheth to upload here</div>
+        <div class="cert-year">— Coming Soon —</div>
+      </div>
+      <div class="cert-badge" style="background:rgba(15,123,130,0.1);color:var(--teal)">Upcoming</div>
     </div>
 
   </div>
@@ -479,36 +370,23 @@
 <section class="downloads" id="downloads">
   <div class="section-label">Resources</div>
   <div class="section-title">Downloads</div>
-  <div class="section-line" style="background:var(--gold);"></div>
+  <div class="section-line" style="background:var(--gold)"></div>
   <div class="downloads-grid">
-
-    <a href="Japheth_CV_Final.pdf" download class="download-card">
-      <div class="download-icon">📄</div>
-      <div class="download-info">
-        <div class="download-name">My CV / Resume</div>
-        <div class="download-size">Professional PDF — Ready to Share</div>
-      </div>
-      <div class="download-arrow">↓</div>
+    <a href="Japheth_CV_Final.pdf" download class="dl-card">
+      <div class="dl-icon">&#128196;</div>
+      <div class="dl-info"><div class="dl-name">My CV / Resume</div><div class="dl-size">Professional PDF &#8212; Click to Download</div></div>
+      <div class="dl-arrow">&#8595;</div>
     </a>
-
-    <a href="Global_Food_Price_Analysis_Portfolio.pdf" download class="download-card">
-      <div class="download-icon">📊</div>
-      <div class="download-info">
-        <div class="download-name">Global Food Price Analysis</div>
-        <div class="download-size">Data Analysis Portfolio — 743K Records</div>
-      </div>
-      <div class="download-arrow">↓</div>
+    <a href="Global_Food_Price_Analysis_Portfolio.pdf" download class="dl-card">
+      <div class="dl-icon">&#128202;</div>
+      <div class="dl-info"><div class="dl-name">Global Food Price Analysis</div><div class="dl-size">Data Analysis Report &#8212; 743K Records</div></div>
+      <div class="dl-arrow">&#8595;</div>
     </a>
-
-    <a href="#" class="download-card" style="opacity:0.5;pointer-events:none;">
-      <div class="download-icon">📋</div>
-      <div class="download-info">
-        <div class="download-name">Business Leverage Case Study</div>
-        <div class="download-size">Coming Soon</div>
-      </div>
-      <div class="download-arrow">↓</div>
+    <a href="Business_Leverage_Case_Study.pdf" download class="dl-card">
+      <div class="dl-icon">&#128203;</div>
+      <div class="dl-info"><div class="dl-name">Business Leverage Case Study</div><div class="dl-size">Strategy Report &#8212; PDF</div></div>
+      <div class="dl-arrow">&#8595;</div>
     </a>
-
   </div>
 </section>
 
@@ -519,44 +397,86 @@
   <div class="section-line"></div>
   <div class="contact-grid">
     <div class="contact-info">
-      <p>
-        I am available for remote roles, freelance projects, and full-time opportunities.
-        If you are looking for a data analyst, project manager, or business operations
-        consultant — let us talk.
-      </p>
+      <p>I am available for remote roles, freelance projects, and full-time opportunities. If you are looking for a data analyst, project manager, or business operations consultant &#8212; let us talk.</p>
       <div class="contact-links">
-        <a href="mailto:noaholuwagbemirojapheth@gmail.com" class="contact-link">
-          <span class="contact-link-icon">✉</span>
-          noaholuwagbemirojapheth@gmail.com
-        </a>
-        <a href="tel:+2347041663551" class="contact-link">
-          <span class="contact-link-icon">☎</span>
-          +234 704 166 3551
-        </a>
-        <a href="#" class="contact-link">
-          <span class="contact-link-icon">in</span>
-          LinkedIn Profile
-        </a>
-        <a href="#" class="contact-link">
-          <span class="contact-link-icon">⌥</span>
-          GitHub Portfolio
-        </a>
+        <a href="mailto:noaholuwagbemirojapheth@gmail.com" class="contact-link"><span class="cl-icon">&#9993;</span>noaholuwagbemirojapheth@gmail.com</a>
+        <a href="tel:+2347041663551" class="contact-link"><span class="cl-icon">&#9990;</span>+234 704 166 3551</a>
+        <a href="https://www.linkedin.com/in/omotoshojapheth/" class="contact-link">
+    <img src="https://svgcdn.com" alt="LinkedIn" class="cl-icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+    LinkedIn
+</a>
+        <a href="https://github.com/RexDaTrustee/My_profile/blob/main/" class="contact-link">
+    <img src="https://svgcdn.com" alt="GitHub" class="cl-icon" style="width: 20px; height: 20px; vertical-align: middle; margin-right: 5px;">
+    GitHub
+</a>
       </div>
     </div>
-    <form class="contact-form" onsubmit="return false;">
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Your Email" />
-      <input type="text" placeholder="Subject" />
-      <textarea placeholder="Your Message..."></textarea>
-      <button type="submit" class="btn-primary" style="border:none;cursor:pointer;">Send Message</button>
-    </form>
+    <div class="cf">
+      <input type="text" placeholder="Your Name">
+      <input type="email" placeholder="Your Email">
+      <input type="text" placeholder="Subject">
+      <textarea placeholder="Your Message..." rows="5"></textarea>
+      <a href="mailto:noaholuwagbemirojapheth@gmail.com" class="btn-primary" style="text-align:center;display:block">Send Message</a>
+    </div>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <p>© 2025 <span>Omotosho Japheth Oluwagbemiro</span>. All rights reserved. Built with purpose.</p>
+  <p>&#169; 2025 <span>Omotosho Japheth Oluwagbemiro</span>. All rights reserved. Built with purpose.</p>
 </footer>
 
+<script>
+// Certificate images storage (base64 or URL — you upload these)
+const certImages = {
+  bsc: null,
+  alx_ai: null,
+  alx_va: null,
+  nd: null
+};
+
+function openSkill(title, icon, body, tag) {
+  document.getElementById("spTitle").innerHTML = title;
+  document.getElementById("spIcon").innerHTML = icon;
+  document.getElementById("spBody").innerHTML = body;
+  document.getElementById("spTag").innerHTML = tag;
+  document.getElementById("skillOverlay").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeSkillPopup(e) {
+  if (!e || e.target === document.getElementById("skillOverlay") || e.type === "click") {
+    document.getElementById("skillOverlay").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+function openCert(title, org, key) {
+  document.getElementById("cpTitle").innerHTML = title;
+  document.getElementById("cpOrg").innerHTML = org;
+  const imgEl = document.getElementById("cpImage");
+  if (certImages[key]) {
+    imgEl.innerHTML = "<img src='" + certImages[key] + "' alt='" + title + "'>";
+  } else {
+    imgEl.innerHTML = "<div class='cert-popup-placeholder'>&#128196;<br><br>Certificate image not yet uploaded.<br><br>Send the certificate image to have it displayed here.</div>";
+  }
+  document.getElementById("certOverlay").classList.add("active");
+  document.body.style.overflow = "hidden";
+}
+
+function closeCertPopup(e) {
+  if (!e || e.target === document.getElementById("certOverlay") || e.type === "click") {
+    document.getElementById("certOverlay").classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+// Close popups with Escape key
+document.addEventListener("keydown", function(e) {
+  if (e.key === "Escape") {
+    closeSkillPopup();
+    closeCertPopup();
+  }
+});
+</script>
 </body>
 </html>
